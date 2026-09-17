@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Odonto Excellence Boituva - Atendimento Humanizado & Odontologia de Excelência</title>
+  <meta name="description" content="Odonto Excellence Boituva: Respire fundo e relaxe: aqui o seu bem-estar vem em primeiro lugar. Atendimento humanizado, sem dor, implantes, aparelhos e clínica geral." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+  <!-- Google Fonts: Inter (100 a 900) - Tipografia Oficial Exata do Portal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#DC2626',
+              'red-dark': '#991B1B',
+              'red-light': '#EF4444',
+              'red-500': '#EF4444',
+              'red-600': '#DC2626',
+              'red-700': '#B91C1C',
+              ice: '#F8FAFC',
+              dark: '#0F172A',
+              'dark-card': '#1E293B',
+              gold: '#C8A05A'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            title: ['Inter', 'sans-serif'],
+            hand: ['Caveat', 'cursive']
+          },
+          boxShadow: {
+            'custom': '0 10px 30px rgba(220, 38, 38, 0.12)',
+            'custom-hover': '0 20px 40px rgba(220, 38, 38, 0.22)',
+            'card': '0 4px 20px rgba(0, 0, 0, 0.05)',
+            'glow-red': '0 0 25px rgba(239, 68, 68, 0.45)'
+          },
+          animation: {
+            'float': 'float 4s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #0F172A;
+      background-color: #FFFFFF;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .font-black-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #B91C1C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-dot-pattern {
+      background-image: radial-gradient(circle at 2px 2px, rgba(239, 68, 68, 0.35) 1.5px, transparent 0);
+      background-size: 40px 40px;
+    }
+
+    .icon-spring {
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .group:hover .icon-spring {
+      transform: scale(1.12) rotate(4deg);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0F172A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #DC2626;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B91C1C;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      color: #DC2626 !important;
+      background: #FFFFFF;
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+      border: 1px solid #E2E8F0;
+      transition: all 0.3s;
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+      background: #DC2626;
+      color: #FFFFFF !important;
+      border-color: #DC2626;
+    }
+    .swiper-button-next:after, .swiper-button-prev:after {
+      font-size: 16px !important;
+      font-weight: bold;
+    }
+    .swiper-pagination-bullet-active,
+    .team-swiper-pagination .swiper-pagination-bullet-active {
+      background: #DC2626 !important;
+      width: 28px !important;
+      border-radius: 10px !important;
+    }
+    .team-swiper-pagination .swiper-pagination-bullet {
+      background: #94A3B8;
+      opacity: 0.7;
+      transition: all 0.3s;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+    }
+    .faq-answer.open {
+      max-height: 300px;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-red-600 selection:text-white">
+
+  <!-- =========================================================================
+       1. TOP BAR (Contatos Rápidos & Telefones da Unidade Boituva)
+       ========================================================================= -->
+  <div class="bg-[#0B1120] text-white text-xs sm:text-sm py-2.5 px-4 border-b border-white/10 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      
+      <!-- Contatos Oficiais Boituva -->
+      <div class="flex items-center gap-3 sm:gap-6 flex-wrap">
+        <div class="flex items-center gap-2">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span class="text-neutral-400 font-semibold tracking-tight">Unidade Boituva - Santa Cruz</span>
+        </div>
+
+        <a href="https://wa.me/5515997091015?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="flex items-center gap-1.5 hover:text-emerald-400 transition-colors font-bold text-emerald-400 tracking-tight">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>(15) 99709-1015</span>
+        </a>
+
+        <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20atendimento%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="hidden sm:flex items-center gap-1.5 hover:text-emerald-400 transition-colors font-bold text-emerald-400 tracking-tight">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>(15) 99689-7677</span>
+        </a>
+      </div>
+
+      <!-- Tag de Humanização & Endereço Rápido -->
+      <div class="flex items-center gap-4">
+        <a href="https://maps.google.com/maps?q=Rua+Profa+Celia+Lourdes+Vercelino,+366+-+Santa+Cruz,+Boituva+-+SP,+18557-020" target="_blank" class="hidden md:inline-flex items-center gap-1.5 text-xs text-neutral-300 hover:text-white transition-colors font-medium">
+          <i class="fa-solid fa-location-dot text-red-500"></i>
+          <span>R. Profa. Célia Lourdes Vercelino, 366 - Santa Cruz</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <a href="https://www.instagram.com/odontoexcellenceboituva/" target="_blank" class="w-6 h-6 rounded-full bg-white/10 hover:bg-red-600 transition-all flex items-center justify-center text-white text-[10px]" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" class="w-6 h-6 rounded-full bg-white/10 hover:bg-red-600 transition-all flex items-center justify-center text-white text-[10px]" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. HEADER / NAVBAR COM EFEITO BLUR
+       ========================================================================= -->
+  <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Oficial Odonto Excellence Horizontal -->
+        <a href="#" class="flex items-center group">
+          <img src="assets/images/logo_horizontal.png" alt="Odonto Excellence Boituva" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+        </a>
+
+        <!-- Desktop Navigation com Pills Interativos -->
+        <nav class="hidden lg:flex items-center gap-1">
+          <a href="#humanizado" class="px-3.5 py-2 rounded-lg text-sm font-bold tracking-tight transition-all duration-300 text-red-700 bg-red-50 flex items-center gap-1.5">
+            <i class="fa-solid fa-heart text-xs"></i>
+            <span>Humanizado</span>
+          </a>
+          <a href="#tratamentos" class="px-3.5 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all duration-300 text-gray-600 hover:text-gray-900 hover:bg-gray-50">Tratamentos</a>
+          <a href="#unidade" class="px-3.5 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all duration-300 text-gray-600 hover:text-gray-900 hover:bg-gray-50">A Clínica</a>
+          <a href="#equipe" class="px-3.5 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all duration-300 text-gray-600 hover:text-gray-900 hover:bg-gray-50">Nossa Equipe</a>
+          <a href="#depoimentos" class="px-3.5 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all duration-300 text-gray-600 hover:text-gray-900 hover:bg-gray-50">Depoimentos</a>
+          <a href="#faq" class="px-3.5 py-2 rounded-lg text-sm font-semibold tracking-tight transition-all duration-300 text-gray-600 hover:text-gray-900 hover:bg-gray-50">Dúvidas</a>
+        </nav>
+
+        <!-- CTA Button com Gradiente e Sombra -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-bold tracking-tight rounded-xl shadow-lg shadow-red-500/25 transition-all duration-300 hover:shadow-red-500/40 hover:scale-105 flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>Agendar Avaliação</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer" aria-label="Abrir menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-100 px-6 py-5 space-y-3 shadow-xl">
+      <a href="#humanizado" class="block text-red-600 font-bold text-sm tracking-tight py-2 border-b border-gray-50 flex items-center gap-2">
+        <i class="fa-solid fa-heart text-xs"></i>
+        <span>Atendimento Humanizado</span>
+      </a>
+      <a href="#tratamentos" class="block text-gray-800 font-bold text-sm tracking-tight hover:text-red-600 py-2 border-b border-gray-50">Tratamentos</a>
+      <a href="#unidade" class="block text-gray-800 font-bold text-sm tracking-tight hover:text-red-600 py-2 border-b border-gray-50">A Clínica</a>
+      <a href="#equipe" class="block text-gray-800 font-bold text-sm tracking-tight hover:text-red-600 py-2 border-b border-gray-50">Nossa Equipe de Dentistas</a>
+      <a href="#depoimentos" class="block text-gray-800 font-bold text-sm tracking-tight hover:text-red-600 py-2 border-b border-gray-50">Depoimentos</a>
+      <a href="#faq" class="block text-gray-800 font-bold text-sm tracking-tight hover:text-red-600 py-2 border-b border-gray-50">Dúvidas & Medos</a>
+      <div class="pt-2">
+        <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="w-full text-center bg-gradient-to-r from-red-500 to-red-600 text-white font-extrabold text-sm px-5 py-3.5 rounded-xl block shadow-lg">
+          Agendar Avaliação no WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. HERO SECTION - COM A TIPOGRAFIA EXATA DA IMAGEM ("Procure uma...")
+       ========================================================================= -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-white w-full">
+    
+    <!-- Background Radial Pattern do Site Oficial -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute inset-0 opacity-25 hero-dot-pattern"></div>
+      <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-radial-gradient from-red-600/20 via-transparent to-transparent blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-radial-gradient from-red-600/15 via-transparent to-transparent blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-24 lg:pt-14 lg:pb-32">
+      <div class="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Coluna Esquerda: Título com Tipografia Oficial Inter Black 900 -->
+        <div class="md:col-span-7 flex flex-col gap-6 w-full">
+          
+          <!-- Badge com Live Ping -->
+          <div class="inline-flex items-center gap-3 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full w-fit">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+            <span class="text-white text-xs sm:text-sm font-semibold tracking-tight">
+              Unidade Boituva • Atendimento Humanizado
+            </span>
+          </div>
+
+          <!-- TÍTULO OFICIAL COM A MESMA TIPOGRAFIA DA IMAGEM -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.08] tracking-[-0.04em]">
+            Respire fundo <span class="text-red-500">e relaxe:</span> <br />
+            aqui o seu bem-estar <br />
+            <span class="relative inline-block mt-1">
+              <span class="relative z-10">vem em primeiro lugar.</span>
+              <div class="absolute bottom-1.5 left-0 w-full h-3.5 bg-red-600/40 -skew-x-12 z-0 transform translate-y-1 rounded-sm"></div>
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed font-normal tracking-tight">
+            Aqui você é único! Cuidamos da sua saúde bucal e da sua autoestima com tecnologia de ponta, sem dor e sem julgamentos. Escolha abaixo como podemos te ajudar:
+          </p>
+
+          <!-- CARDS DE AÃ‡ÃƒO COM TIPOGRAFIA INTER -->
+          <div class="w-full space-y-3 pt-2">
+            
+            <!-- Card 1 -->
+            <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="group flex items-center gap-4 rounded-2xl bg-white p-4 shadow-2xl shadow-black/40 ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-black/60 sm:p-5">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-red-600 transition-colors duration-300 group-hover:bg-red-600 group-hover:text-white sm:h-14 sm:w-14 icon-spring">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 sm:h-7 sm:w-7">
+                  <path d="M12.127 22H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5.125"></path>
+                  <path d="M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z"></path>
+                  <path d="M16 2v4"></path>
+                  <path d="M3 10h18"></path>
+                  <path d="M8 2v4"></path>
+                </svg>
+              </div>
+              <div class="min-w-0 flex-1 text-left">
+                <p class="text-base font-extrabold leading-tight text-gray-900 sm:text-lg tracking-tight">Quero Agendar Avaliação</p>
+                <p class="text-xs sm:text-sm leading-snug text-gray-500 font-normal tracking-tight">Atendimento rápido pelo WhatsApp sem burocracia</p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 text-gray-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-red-600">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20um%20tratamento%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="group flex items-center gap-4 rounded-2xl bg-white p-4 shadow-2xl shadow-black/40 ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-black/60 sm:p-5">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 transition-colors duration-300 group-hover:bg-emerald-600 group-hover:text-white sm:h-14 sm:w-14 icon-spring">
+                <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+              </div>
+              <div class="min-w-0 flex-1 text-left">
+                <p class="text-base font-extrabold leading-tight text-gray-900 sm:text-lg tracking-tight">Falar Direto no WhatsApp</p>
+                <p class="text-xs sm:text-sm leading-snug text-gray-500 font-normal tracking-tight">Tire dúvidas com nossa equipe humanizada agora</p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 text-gray-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-emerald-600">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="#tratamentos" class="group flex items-center gap-4 rounded-2xl bg-white p-4 shadow-2xl shadow-black/40 ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-black/60 sm:p-5">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors duration-300 group-hover:bg-blue-600 group-hover:text-white sm:h-14 sm:w-14 icon-spring">
+                <i class="fa-solid fa-tooth text-2xl sm:text-3xl"></i>
+              </div>
+              <div class="min-w-0 flex-1 text-left">
+                <p class="text-base font-extrabold leading-tight text-gray-900 sm:text-lg tracking-tight">Conhecer Tratamentos</p>
+                <p class="text-xs sm:text-sm leading-snug text-gray-500 font-normal tracking-tight">Implantes, Aparelhos, Clareamento, Canal e Próteses</p>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 text-gray-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-blue-600">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+
+          </div>
+
+          <!-- Métricas -->
+          <div class="flex items-center gap-4 sm:gap-6 pt-3">
+            <div class="flex flex-col">
+              <span class="text-xl sm:text-2xl font-black text-white whitespace-nowrap leading-none tracking-tight">17 Anos</span>
+              <span class="text-[11px] sm:text-xs text-gray-400 font-medium uppercase tracking-wider">De História</span>
+            </div>
+            <div class="w-px h-8 bg-white/15"></div>
+            <div class="flex flex-col">
+              <span class="text-xl sm:text-2xl font-black text-white whitespace-nowrap leading-none tracking-tight">+1.340</span>
+              <span class="text-[11px] sm:text-xs text-gray-400 font-medium uppercase tracking-wider">Unidades na Rede</span>
+            </div>
+            <div class="w-px h-8 bg-white/15"></div>
+            <div class="flex flex-col">
+              <span class="text-xl sm:text-2xl font-black text-white whitespace-nowrap leading-none tracking-tight">100%</span>
+              <span class="text-[11px] sm:text-xs text-gray-400 font-medium uppercase tracking-wider">Humanizado</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Coluna Direita: Imagem da Clínica com Badges Flutuantes -->
+        <div class="md:col-span-5 relative mt-6 md:mt-0">
+          
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+            <img src="assets/images/recepcao.png" alt="Recepção Odonto Excellence Boituva" class="w-full h-80 sm:h-96 md:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="px-3 py-1 rounded-full bg-red-600 text-[11px] font-bold uppercase tracking-wider">Unidade Boituva</span>
+              <h3 class="text-lg font-extrabold mt-2 text-white tracking-tight">Estrutura Completa & Confortável</h3>
+              <p class="text-xs text-gray-300 font-normal">R. Profa. Célia Lourdes Vercelino, 366 – Santa Cruz</p>
+            </div>
+          </div>
+
+          <!-- Floating Badge 1 -->
+          <div class="absolute -top-4 -left-4 bg-gray-900/90 backdrop-blur-xl border border-white/15 p-3.5 rounded-2xl shadow-2xl z-20 animate-float hidden sm:flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+              <i class="fa-solid fa-heart-circle-check text-lg"></i>
+            </div>
+            <div>
+              <p class="text-white font-bold text-xs tracking-tight">Acolhimento</p>
+              <p class="text-[10px] text-gray-400">Zero Julgamentos</p>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2 -->
+          <div class="absolute -bottom-4 -right-4 bg-gray-900/90 backdrop-blur-xl border border-white/15 p-3.5 rounded-2xl shadow-2xl z-20 animate-float hidden sm:flex items-center gap-3" style="animation-delay: 2s;">
+            <div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center">
+              <i class="fa-solid fa-hand-holding-medical text-lg"></i>
+            </div>
+            <div>
+              <p class="text-white font-bold text-xs tracking-tight">Cuidado Sem Dor</p>
+              <p class="text-[10px] text-gray-400">Anestesia Suave</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. BARRA DE DESTAQUES SOBREPOSTA (COM OS ÍCONES EXATOS DA MARCA)
+       ========================================================================= -->
+  <section class="relative z-30 -mt-10 sm:-mt-14 px-4 sm:px-6 lg:px-8 mb-12 w-full">
+    <div class="w-full max-w-7xl mx-auto">
+      <div class="bg-white rounded-3xl shadow-2xl shadow-black/10 border border-gray-100 overflow-hidden">
+        
+        <!-- Grid Principal com Ícones Two-Tone das Imagens -->
+        <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+          
+          <!-- Destaque 1: Heart Care / Humanizado -->
+          <div class="p-6 sm:p-8 flex items-center gap-4 group hover:bg-gray-50 transition-colors">
+            <div class="w-16 h-16 rounded-2xl bg-red-50/80 border border-red-100 flex items-center justify-center icon-spring shrink-0 shadow-sm">
+              <!-- Custom Two-Tone SVG: Heart Care (Cuidado com Amor) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-9 h-9" fill="none">
+                <path d="M32 54.5C32 54.5 10 41 10 24.5C10 16.5 16.5 10 24.5 10C29 10 32 13 32 13C32 13 35 10 39.5 10C47.5 10 54 16.5 54 24.5C54 41 32 54.5 32 54.5Z" stroke="#DC2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 28C22 28 25 34 32 34C39 34 42 28 42 28" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="25" cy="22" r="2" fill="#0F172A"/>
+                <circle cx="39" cy="22" r="2" fill="#0F172A"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">Tratamento Acolhedor</p>
+              <span class="text-2xl font-black text-gray-900 tracking-tight">100% Humanizado</span>
+            </div>
+          </div>
+
+          <!-- Destaque 2: Hospital Sign / Segurança & CRO -->
+          <div class="p-6 sm:p-8 flex items-center gap-4 group hover:bg-gray-50 transition-colors">
+            <div class="w-16 h-16 rounded-2xl bg-red-50/80 border border-red-100 flex items-center justify-center icon-spring shrink-0 shadow-sm">
+              <!-- Custom Two-Tone SVG: Hospital Sign (Cruz Médica & Círculo Duplo) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-9 h-9" fill="none">
+                <circle cx="32" cy="32" r="24" stroke="#0F172A" stroke-width="3"/>
+                <circle cx="32" cy="32" r="20" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="2 3"/>
+                <path d="M28 19H36V28H45V36H36V45H28V36H19V28H28V19Z" fill="#FEE2E2" stroke="#DC2626" stroke-width="2.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">Segurança & Ã‰tica</p>
+              <span class="text-2xl font-black text-gray-900 tracking-tight">Dentistas com CRO</span>
+            </div>
+          </div>
+
+          <!-- Destaque 3: Clock / Facilidade de Horários -->
+          <div class="p-6 sm:p-8 flex items-center gap-4 group hover:bg-gray-50 transition-colors">
+            <div class="w-16 h-16 rounded-2xl bg-red-50/80 border border-red-100 flex items-center justify-center icon-spring shrink-0 shadow-sm">
+              <!-- Custom Two-Tone SVG: Clock (Relógio Two-Tone com ponteiros vermelhos) -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-9 h-9" fill="none">
+                <circle cx="32" cy="32" r="24" stroke="#0F172A" stroke-width="3"/>
+                <circle cx="32" cy="32" r="4" fill="#DC2626"/>
+                <path d="M32 17V32L42 38" stroke="#DC2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="32" y1="12" x2="32" y2="15" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="52" y1="32" x2="49" y2="32" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="32" y1="52" x2="32" y2="49" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="12" y1="32" x2="15" y2="32" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-0.5">Facilidade</p>
+              <span class="text-2xl font-black text-gray-900 tracking-tight">Seg a Sáb</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Faixa de Contato Rápido & GPS -->
+        <div class="bg-red-50/70 border-t border-red-100 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3 text-red-700">
+            <!-- Custom Two-Tone SVG: GPS Location Pin -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6 shrink-0" fill="none">
+              <rect x="4" y="8" width="24" height="20" rx="3" stroke="#DC2626" stroke-width="2"/>
+              <line x1="4" y1="14" x2="28" y2="14" stroke="#DC2626" stroke-width="1.5" stroke-opacity="0.4"/>
+              <line x1="4" y1="20" x2="28" y2="20" stroke="#DC2626" stroke-width="1.5" stroke-opacity="0.4"/>
+              <line x1="12" y1="8" x2="12" y2="28" stroke="#DC2626" stroke-width="1.5" stroke-opacity="0.4"/>
+              <line x1="20" y1="8" x2="20" y2="28" stroke="#DC2626" stroke-width="1.5" stroke-opacity="0.4"/>
+              <path d="M16 2C13.2 2 11 4.2 11 7C11 10.5 16 16 16 16C16 16 21 10.5 21 7C21 4.2 18.8 2 16 2Z" fill="#DC2626" stroke="#0F172A" stroke-width="1.5"/>
+              <circle cx="16" cy="7" r="2" fill="#FFFFFF"/>
+            </svg>
+            <span class="text-xs font-bold uppercase tracking-wider">Unidade Boituva: R. Profa. Célia Lourdes Vercelino, 366 – Santa Cruz</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-gray-600 font-semibold">WhatsApp Rápido:</span>
+            <a href="https://wa.me/5515996897677" target="_blank" class="text-xs font-black text-red-600 bg-white border border-red-200 px-4 py-1.5 rounded-full hover:bg-red-600 hover:text-white transition-all tracking-tight shadow-sm">
+              (15) 99689-7677
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. MANIFESTO DO ATENDIMENTO HUMANIZADO (COM OS ÍCONES HIGHLIGHTS)
+       ========================================================================= -->
+  <section id="humanizado" class="py-16 bg-white relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="bg-gradient-to-b from-white to-gray-50 rounded-3xl shadow-2xl border border-gray-200 p-8 sm:p-12 text-center relative overflow-hidden">
+        
+        <div class="w-24 h-1.5 bg-red-600 mx-auto rounded-full mb-6"></div>
+
+        <img src="assets/images/logo.png" alt="Odonto Excellence" class="h-16 sm:h-20 w-auto mx-auto object-contain mb-4" />
+
+        <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-[-0.04em] text-gray-900 leading-tight">
+          ATENDIMENTO <br />
+          <span class="gradient-text">HUMANIZADO</span>
+        </h2>
+
+        <!-- Destaque visual: Coração Two-Tone das imagens -->
+        <div class="my-4 flex justify-center animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-12 h-12" fill="none">
+            <path d="M24 41C24 41 7 30 7 17.5C7 11.5 12 7 18 7C21.5 7 24 9.5 24 9.5C24 9.5 26.5 7 30 7C36 7 41 11.5 41 17.5C41 30 24 41 24 41Z" fill="#FEE2E2" stroke="#DC2626" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M18 19L24 25L30 19" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h3 class="text-2xl sm:text-3xl font-black text-gray-900 mb-3 tracking-tight">
+          Aqui, você é <span class="text-red-600 underline decoration-red-300">único!</span>
+        </h3>
+
+        <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-8 font-normal">
+          Estamos prontos para <strong>tirar todas as suas dúvidas</strong> e oferecer <strong>todo o suporte</strong> que você precisa, com acolhimento, empatia e dedicação em cada detalhe.
+        </p>
+
+        <!-- Botões de Contato -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-10">
+          
+          <a href="https://wa.me/5515997091015?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20o%20atendimento%20humanizado" target="_blank" class="flex items-center justify-center gap-3 py-3.5 px-5 rounded-2xl border-2 border-emerald-500 hover:bg-emerald-600 hover:text-white text-gray-900 transition-all duration-300 shadow-md group">
+            <div class="w-9 h-9 rounded-xl bg-emerald-600 group-hover:bg-white text-white group-hover:text-emerald-600 flex items-center justify-center text-lg transition-colors icon-spring">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="text-left">
+              <span class="block text-[10px] uppercase font-bold tracking-wider text-gray-400 group-hover:text-white/80">WhatsApp 1</span>
+              <span class="block text-sm sm:text-base font-black text-gray-900 group-hover:text-white tracking-tight">(15) 99709-1015</span>
+            </div>
+          </a>
+
+          <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20o%20atendimento%20humanizado" target="_blank" class="flex items-center justify-center gap-3 py-3.5 px-5 rounded-2xl border-2 border-emerald-500 hover:bg-emerald-600 hover:text-white text-gray-900 transition-all duration-300 shadow-md group">
+            <div class="w-9 h-9 rounded-xl bg-emerald-600 group-hover:bg-white text-white group-hover:text-emerald-600 flex items-center justify-center text-lg transition-colors icon-spring">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="text-left">
+              <span class="block text-[10px] uppercase font-bold tracking-wider text-gray-400 group-hover:text-white/80">WhatsApp 2</span>
+              <span class="block text-sm sm:text-base font-black text-gray-900 group-hover:text-white tracking-tight">(15) 99689-7677</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- 4 Pilares com os Ícones Highlights da Imagem 2 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-gray-200 text-left">
+          
+          <!-- Pilar 1: Heart Care / Hand Care -->
+          <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-red-400 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center mb-3 icon-spring">
+              <!-- Custom SVG: Heart Care with Caring Hand -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-7 h-7" fill="none">
+                <path d="M24 41C24 41 8 30 8 18C8 12.5 12.5 8 18 8C21.5 8 24 10.5 24 10.5C24 10.5 26.5 8 30 8C35.5 8 40 12.5 40 18C40 30 24 41 24 41Z" stroke="#DC2626" stroke-width="2.5" stroke-linejoin="round"/>
+                <!-- Hand / Care silhouette inside -->
+                <path d="M20 25C20 22 23 20 26 20C27.5 20 29 21 30 22L33 25" stroke="#0F172A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M16 28L22 34L28 28" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xs uppercase text-gray-900 tracking-tight">Atendimento Humanizado</h4>
+            <p class="text-[11px] text-gray-500 mt-1 leading-snug">Respeito e empatia em primeiro lugar.</p>
+          </div>
+
+          <!-- Pilar 2: Speech Question Bubbles -->
+          <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-red-400 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-center mb-3 icon-spring">
+              <!-- Custom SVG: Question Speech Bubbles -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-7 h-7" fill="none">
+                <path d="M12 10H30C33.3 10 36 12.7 36 16V26C36 29.3 33.3 32 30 32H20L12 38V32H12C8.7 32 6 29.3 6 26V16C6 12.7 8.7 10 12 10Z" stroke="#D97706" stroke-width="2.5" stroke-linejoin="round"/>
+                <text x="21" y="24" font-size="13" font-weight="900" fill="#DC2626" text-anchor="middle" font-family="Inter, sans-serif">?</text>
+                <path d="M36 20H38C40.2 20 42 21.8 42 24V32C42 34.2 40.2 36 38 36H36V40L31 36H28" stroke="#0F172A" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xs uppercase text-gray-900 tracking-tight">Tire Suas Dúvidas</h4>
+            <p class="text-[11px] text-gray-500 mt-1 leading-snug">Esclarecemos tudo com carinho e atenção.</p>
+          </div>
+
+          <!-- Pilar 3: Medical Checklist / Suporte Completo -->
+          <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-red-400 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center mb-3 icon-spring">
+              <!-- Custom SVG: Medical Clipboard with ECG / Checklist -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-7 h-7" fill="none">
+                <rect x="10" y="10" width="28" height="32" rx="4" stroke="#0F172A" stroke-width="2.5"/>
+                <path d="M18 8C18 6.9 18.9 6 20 6H28C29.1 6 30 6.9 30 8V11H18V8Z" fill="#DC2626" stroke="#DC2626" stroke-width="2"/>
+                <line x1="16" y1="18" x2="22" y2="18" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+                <line x1="16" y1="24" x2="22" y2="24" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+                <line x1="16" y1="30" x2="22" y2="30" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+                <!-- Heart / ECG badge on clipboard -->
+                <path d="M26 26L28 24L30 28L32 23L34 26H36" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xs uppercase text-gray-900 tracking-tight">Suporte Completo</h4>
+            <p class="text-[11px] text-gray-500 mt-1 leading-snug">Acompanhamento em todas as etapas.</p>
+          </div>
+
+          <!-- Pilar 4: Doctor with Stethoscope / Confiança & Segurança -->
+          <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:border-red-400 hover:shadow-md transition-all group">
+            <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center mb-3 icon-spring">
+              <!-- Custom SVG: Doctor with Heart / Stethoscope -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-7 h-7" fill="none">
+                <circle cx="24" cy="14" r="6" stroke="#0F172A" stroke-width="2.5"/>
+                <path d="M12 36C12 29.4 17.4 24 24 24C30.6 24 36 29.4 36 36" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Stethoscope & Heart -->
+                <path d="M17 26V31C17 34.9 20.1 38 24 38C27.9 38 31 34.9 31 31V26" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="24" cy="38" r="2.5" fill="#DC2626"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-xs uppercase text-gray-900 tracking-tight">Confiança & Segurança</h4>
+            <p class="text-[11px] text-gray-500 mt-1 leading-snug">Sua saúde bucal em boas mãos.</p>
+          </div>
+
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-200">
+          <p class="text-xl sm:text-2xl text-gray-800 italic">
+            Cuidar do seu sorriso <span class="font-hand text-3xl sm:text-4xl text-red-600 not-italic font-bold">com excelência</span> é a nossa missão.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. JORNADA DO PACIENTE COM NÃšMEROS DE MARCA D'ÁGUA
+       ========================================================================= -->
+  <section class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-red-600 font-bold uppercase tracking-wider text-xs bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+          Como Funciona Seu Atendimento
+        </span>
+        <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mt-4 tracking-[-0.04em]">
+          Sua jornada para um <span class="gradient-text">sorriso saudável</span>
+        </h2>
+        <p class="mt-3 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+          Um processo acolhedor, transparente e estruturado para você se sentir seguro do início ao fim.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Passo 1 -->
+        <div class="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+          <div class="absolute -right-3 -bottom-6 text-8xl font-black text-gray-100 opacity-60 group-hover:text-red-100 group-hover:scale-110 transition-all duration-300 select-none pointer-events-none">1</div>
+          <div class="relative w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors duration-300 icon-spring">
+            <i class="fa-regular fa-calendar-check text-2xl text-red-600 group-hover:text-white transition-colors"></i>
+          </div>
+          <div class="relative">
+            <h3 class="text-lg font-black text-gray-900 mb-2 group-hover:text-red-600 transition-colors tracking-tight">Agendamento Fácil</h3>
+            <p class="text-gray-600 leading-relaxed text-xs sm:text-sm">Escolha dia e horário pelo site ou mande mensagem direta no nosso WhatsApp.</p>
+          </div>
+        </div>
+
+        <!-- Passo 2 -->
+        <div class="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+          <div class="absolute -right-3 -bottom-6 text-8xl font-black text-gray-100 opacity-60 group-hover:text-red-100 group-hover:scale-110 transition-all duration-300 select-none pointer-events-none">2</div>
+          <div class="relative w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors duration-300 icon-spring">
+            <i class="fa-solid fa-mug-hot text-2xl text-red-600 group-hover:text-white transition-colors"></i>
+          </div>
+          <div class="relative">
+            <h3 class="text-lg font-black text-gray-900 mb-2 group-hover:text-red-600 transition-colors tracking-tight">Recepção & Café</h3>
+            <p class="text-gray-600 leading-relaxed text-xs sm:text-sm">Chegue e relaxe na nossa recepção climatizada com café fresco e equipe prestativa.</p>
+          </div>
+        </div>
+
+        <!-- Passo 3 -->
+        <div class="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+          <div class="absolute -right-3 -bottom-6 text-8xl font-black text-gray-100 opacity-60 group-hover:text-red-100 group-hover:scale-110 transition-all duration-300 select-none pointer-events-none">3</div>
+          <div class="relative w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors duration-300 icon-spring">
+            <i class="fa-solid fa-comments-dollar text-2xl text-red-600 group-hover:text-white transition-colors"></i>
+          </div>
+          <div class="relative">
+            <h3 class="text-lg font-black text-gray-900 mb-2 group-hover:text-red-600 transition-colors tracking-tight">Avaliação Sem Pressa</h3>
+            <p class="text-gray-600 leading-relaxed text-xs sm:text-sm">Explicamos suas opções com calma, tiramos dúvidas e planejamos o orçamento juntos.</p>
+          </div>
+        </div>
+
+        <!-- Passo 4 -->
+        <div class="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+          <div class="absolute -right-3 -bottom-6 text-8xl font-black text-gray-100 opacity-60 group-hover:text-red-100 group-hover:scale-110 transition-all duration-300 select-none pointer-events-none">4</div>
+          <div class="relative w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-red-600 transition-colors duration-300 icon-spring">
+            <i class="fa-solid fa-face-smile-beam text-2xl text-red-600 group-hover:text-white transition-colors"></i>
+          </div>
+          <div class="relative">
+            <h3 class="text-lg font-black text-gray-900 mb-2 group-hover:text-red-600 transition-colors tracking-tight">Sorriso Renovado</h3>
+            <p class="text-gray-600 leading-relaxed text-xs sm:text-sm">Tratamento suave, sem dor e com acompanhamento via WhatsApp em todo o pós.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. TRATAMENTOS ODONTOLÃ“GICOS COMPLETOS
+       ========================================================================= -->
+  <!-- =========================================================================
+       7. TRATAMENTOS ODONTOLÃ“GICOS COMPLETOS (TODOS OS SERVIÃ‡OS REAIS)
+       ========================================================================= -->
+  <section id="tratamentos" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-red-600 font-bold uppercase tracking-wider text-xs bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+          Especialidades Odonto Excellence Boituva
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mt-3 tracking-[-0.04em]">
+          Todos os tratamentos na <span class="gradient-text">unidade Boituva</span>
+        </h2>
+        <p class="text-gray-600 mt-3 text-sm sm:text-base">
+          Cuidamos de todas as especialidades do seu sorriso e da sua face com tecnologia moderna, acolhimento e sem dor.
+        </p>
+      </div>
+
+      <!-- Grade dos Principais Tratamentos -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 1. Implantes Dentários -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-tooth"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-gray-900 text-white px-2.5 py-1 rounded-full">Reabilitação</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Implantes Dentários
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Recupere a mastigação firme e a segurança ao sorrir com implantes unitários, múltiplos ou protocolo fixo com materiais de ponta.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Ortodontia & Aparelhos -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-teeth"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-red-600 text-white px-2.5 py-1 rounded-full">Mais Procurado</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Ortodontia & Alinhadores
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Correção do alinhamento dental e mordida com aparelhos fixos metálicos, estéticos (safira/porcelana), autoligados e alinhadores transparentes.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Harmonização Facial & Toxina Botulínica -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-face-smile"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-brand-gold text-white px-2.5 py-1 rounded-full">Estética Facial</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Toxina Botulínica & Harmonização
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Tratamentos estéticos faciais, botox para linhas de expressão e bruxismo, preenchimento e harmonização do contorno facial.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Lentes de Contato & Facetas de Resina / Porcelana -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-gem"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-brand-gold text-white px-2.5 py-1 rounded-full">Estética Dental</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Lentes & Facetas (Resina / Porcelana)
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Transforme a cor, simetria e formato dos dentes com facetas em resina de acabamento natural ou lentes ultra-finas de porcelana.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Clareamento Dental -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-amber-500 text-white px-2.5 py-1 rounded-full">Dentes Brancos</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Clareamento Dental
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Sorriso iluminado e radiante com protocolo a laser de alta potência no consultório ou moldeiras personalizadas para uso em casa.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Próteses Dentárias, Dentaduras & Pontes -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-teeth-open"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-blue-600 text-white px-2.5 py-1 rounded-full">Conforto</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Dentaduras, Pontes & Próteses
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Próteses totais (dentaduras), removíveis com grampos discretos e pontes fixas projetadas com precisão para seu máximo conforto.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. Tratamento de Canal (Endodontia) -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-emerald-600 text-white px-2.5 py-1 rounded-full">Sem Dor</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Tratamento de Canal (Endodontia)
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Alívio imediato da dor e preservação do dente natural com instrumentos rotatórios modernos, rapidez e anestesia altamente confortável.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. Atendimento Infantil & Selantes (Odontopediatria) -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-child-reaching"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-pink-600 text-white px-2.5 py-1 rounded-full">Infantil</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Atendimento Infantil & Selantes
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Ambiente lúdico e acolhedor para crianças: aplicação de selante preventiva, flúor, orientação e acompanhamento sem traumas.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 9. Clínico Geral, Limpeza, Restaurações & Extrações -->
+        <div class="bg-white rounded-3xl p-7 border border-gray-100 hover:border-red-300 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white transition-colors icon-spring">
+                <i class="fa-solid fa-notes-medical"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase bg-purple-600 text-white px-2.5 py-1 rounded-full">Clínico Geral</span>
+            </div>
+            <h3 class="font-black text-lg text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+              Clínica Geral, Limpeza & Restaurações
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed font-normal">
+              Avaliações gerais completas, limpezas com ultrassom (profilaxia), restaurações estéticas em resina, dentística e cirurgias/extrações seguras.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <a href="#agendar" class="text-xs font-bold uppercase text-red-600 hover:text-red-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Agendar Avaliação</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Lista Completa em Tags com Ícones -->
+      <div class="mt-12 p-8 bg-gray-50 rounded-3xl border border-gray-200">
+        <h4 class="text-center font-black text-sm sm:text-base uppercase tracking-wider text-gray-900 mb-6">
+          Lista Completa de Serviços na Odonto Excellence Boituva:
+        </h4>
+        <div class="flex flex-wrap justify-center gap-2.5">
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Clínica Odontológica</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Clareamento Dental</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Dentaduras e Pontes</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Implantes Dentários</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Dentística & Restaurações</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Lente de Contato Dental</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Facetas em Resina</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Faceta de Porcelana</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Ortodontia & Aparelhos</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Clínico Geral</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Limpeza Dentária (Profilaxia)</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Tratamento de Canal</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Avaliações em Geral</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Aplicação de Selante</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Próteses Dentárias</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Toxina Botulínica (Botox)</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Harmonização Facial</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Tratamentos Estéticos</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Extração & Cirurgias</span>
+          <span class="px-3.5 py-2 bg-white rounded-xl border border-gray-200 text-xs font-bold text-gray-800 shadow-sm flex items-center gap-1.5"><i class="fa-solid fa-check text-red-600"></i> Atendimento Infantil</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. SEÃ‡ÃƒO CTA BANNER VERMELHO
+       ========================================================================= -->
+  <section class="py-16 lg:py-20 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden text-white">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-black/20 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
+          <span class="text-xs uppercase font-bold tracking-widest bg-black/20 px-3.5 py-1.5 rounded-full text-white/90">
+            Cuidado Especial para Você
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-[-0.04em]">
+            Pronto para reconquistar a confiança de <span class="text-gray-900">sorrir pra valer?</span>
+          </h2>
+          <p class="text-base sm:text-lg text-white/90 max-w-2xl font-normal">
+            Nossa equipe de Boituva está pronta para te atender com carinho, paciência e condições facilitadas.
+          </p>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4 justify-center">
+          <a href="#agendar" class="px-8 py-4 bg-gray-900 hover:bg-black text-white font-extrabold rounded-2xl shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center gap-2 tracking-tight">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Agendar Consulta</span>
+          </a>
+          <a href="https://wa.me/5515996897677" target="_blank" class="px-8 py-4 bg-white text-red-700 font-extrabold rounded-2xl shadow-xl hover:bg-gray-50 hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center gap-2 tracking-tight">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>WhatsApp (15) 99689-7677</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. A CLÍNICA (Carrossel com Fotos Reais)
+       ========================================================================= -->
+  <section id="unidade" class="py-16 sm:py-24 bg-white border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-block px-3.5 py-1.5 rounded-full bg-red-50 text-red-600 font-bold text-xs uppercase border border-red-100">
+            Nossa Unidade em Boituva
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-[-0.04em] leading-tight">
+            Conheça nossa estrutura <br />
+            <span class="gradient-text">Odonto Excellence</span>
+          </h2>
+
+          <p class="text-gray-600 leading-relaxed text-sm sm:text-base font-normal">
+            Ambiente acolhedor, moderno e seguro. Desenvolvido para que sua visita ao dentista seja uma experiência relaxante, agradável e sem medos.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
+              <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 text-red-600 flex items-center justify-center shrink-0 shadow-sm">
+                <!-- Custom Two-Tone SVG: GPS Grid -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6" fill="none">
+                  <rect x="4" y="8" width="24" height="20" rx="3" stroke="#DC2626" stroke-width="2"/>
+                  <line x1="4" y1="14" x2="28" y2="14" stroke="#DC2626" stroke-width="1.2" stroke-opacity="0.4"/>
+                  <line x1="4" y1="20" x2="28" y2="20" stroke="#DC2626" stroke-width="1.2" stroke-opacity="0.4"/>
+                  <line x1="12" y1="8" x2="12" y2="28" stroke="#DC2626" stroke-width="1.2" stroke-opacity="0.4"/>
+                  <line x1="20" y1="8" x2="20" y2="28" stroke="#DC2626" stroke-width="1.2" stroke-opacity="0.4"/>
+                  <path d="M16 2C13.2 2 11 4.2 11 7C11 10.5 16 16 16 16C16 16 21 10.5 21 7C21 4.2 18.8 2 16 2Z" fill="#DC2626" stroke="#0F172A" stroke-width="1.5"/>
+                  <circle cx="16" cy="7" r="2" fill="#FFFFFF"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-extrabold text-sm text-gray-900 tracking-tight">Endereço</h4>
+                <p class="text-xs sm:text-sm text-gray-600 mt-0.5">R. Profa. Célia Lourdes Vercelino, 366 – Santa Cruz, Boituva – SP, 18557-020</p>
+                <a href="https://maps.google.com/maps?q=Rua+Profa+Celia+Lourdes+Vercelino,+366+-+Santa+Cruz,+Boituva+-+SP,+18557-020" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold text-red-600 hover:underline mt-1">
+                  <span>Ver no Google Maps</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
+              <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 text-red-600 flex items-center justify-center shrink-0 shadow-sm">
+                <!-- Custom Two-Tone SVG: Heart Care -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6" fill="none">
+                  <path d="M16 27C16 27 5 20 5 12C5 8 8 5 12 5C14.5 5 16 6.5 16 6.5C16 6.5 17.5 5 20 5C24 5 27 8 27 12C27 20 16 27 16 27Z" stroke="#DC2626" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M11 13L16 18L21 13" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-extrabold text-sm text-gray-900 tracking-tight">Atendimento WhatsApp</h4>
+                <p class="text-xs sm:text-sm text-gray-600 mt-0.5 font-semibold flex flex-wrap items-center gap-2">
+                  <a href="https://wa.me/5515997091015" target="_blank" class="text-emerald-600 hover:underline inline-flex items-center gap-1"><i class="fa-brands fa-whatsapp"></i> (15) 99709-1015</a>
+                  <span>•</span>
+                  <a href="https://wa.me/5515996897677" target="_blank" class="text-emerald-600 hover:underline inline-flex items-center gap-1"><i class="fa-brands fa-whatsapp"></i> (15) 99689-7677</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
+              <div class="w-12 h-12 rounded-xl bg-white border border-gray-200 text-red-600 flex items-center justify-center shrink-0 shadow-sm">
+                <!-- Custom Two-Tone SVG: Clock -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6" fill="none">
+                  <circle cx="16" cy="16" r="12" stroke="#0F172A" stroke-width="2"/>
+                  <circle cx="16" cy="16" r="2" fill="#DC2626"/>
+                  <path d="M16 8V16L21 19" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-extrabold text-sm text-gray-900 tracking-tight">Horário de Atendimento</h4>
+                <p class="text-xs sm:text-sm text-gray-600 mt-0.5">Segunda a Sexta: 08h às 19h | Sábados: 08h às 13h</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-900">
+            <div class="swiper clinicSwiper">
+              <div class="swiper-wrapper">
+                
+                <div class="swiper-slide relative">
+                  <img src="assets/images/fachada.png" alt="Fachada Odonto Excellence Boituva" class="w-full h-80 sm:h-96 md:h-[420px] object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <div class="text-white">
+                      <span class="bg-red-600 px-3 py-1 rounded-md text-xs font-bold uppercase">Fachada Boituva</span>
+                      <h3 class="text-lg font-extrabold mt-1 tracking-tight">R. Profa. Célia Lourdes Vercelino, 366</h3>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide relative">
+                  <img src="assets/images/recepcao.png" alt="Recepção Odonto Excellence Boituva" class="w-full h-80 sm:h-96 md:h-[420px] object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                    <div class="text-white">
+                      <span class="bg-red-600 px-3 py-1 rounded-md text-xs font-bold uppercase">Recepção Acolhedora</span>
+                      <h3 class="text-lg font-extrabold mt-1 tracking-tight">Atendimento Humanizado e Conforto</h3>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9.1 CORPO CLÍNICO & ESPECIALISTAS (CARROSSEL DA EQUIPE)
+       ========================================================================= -->
+  <section id="equipe" class="py-16 sm:py-24 bg-gradient-to-b from-white via-red-50/30 to-white relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-12 left-10 w-72 h-72 bg-red-100/50 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-12 right-10 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Cabeçalho da Seção -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div class="max-w-2xl">
+          <span class="text-red-600 font-bold uppercase tracking-wider text-xs bg-red-100/80 px-3.5 py-1.5 rounded-full border border-red-200 inline-flex items-center gap-2">
+            <i class="fa-solid fa-user-doctor text-red-600"></i>
+            <span>Corpo Clínico & Especialistas</span>
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mt-3 tracking-[-0.04em] leading-tight">
+            Quem cuida de você na <br class="hidden sm:inline" />
+            <span class="gradient-text">Odonto Excellence Boituva</span>
+          </h2>
+          <p class="text-gray-600 mt-3 text-sm sm:text-base leading-relaxed">
+            Dentistas experientes, registrados no CRO e apaixonados pelo atendimento humanizado, sem dor e sem julgamentos.
+          </p>
+        </div>
+
+        <!-- Controles de Navegação Customizados -->
+        <div class="flex items-center gap-3">
+          <button type="button" class="team-swiper-prev w-12 h-12 rounded-2xl bg-white border border-gray-200 text-gray-800 shadow-md hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center cursor-pointer group" aria-label="Anterior">
+            <i class="fa-solid fa-arrow-left text-sm group-hover:-translate-x-0.5 transition-transform"></i>
+          </button>
+          <button type="button" class="team-swiper-next w-12 h-12 rounded-2xl bg-white border border-gray-200 text-gray-800 shadow-md hover:bg-red-600 hover:text-white hover:border-red-600 transition-all flex items-center justify-center cursor-pointer group" aria-label="Próximo">
+            <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-0.5 transition-transform"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Carrossel da Equipe (Swiper) -->
+      <div class="swiper teamSwiper pb-12">
+        <div class="swiper-wrapper">
+          
+          <!-- Membro 1: Dra. Larissa Santos (RT) -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-red-400 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
+              <div>
+                <!-- Top Card Header -->
+                <div class="flex items-start justify-between gap-3 mb-5">
+                  <div class="relative">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-red-500 to-red-700 text-white flex items-center justify-center text-3xl font-black shadow-lg shadow-red-500/20 group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[10px]" title="Disponível">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </div>
+                  <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-red-50 text-red-600 border border-red-200">
+                    Responsável Técnica
+                  </span>
+                </div>
+
+                <div class="space-y-1 mb-3">
+                  <h3 class="text-lg font-black text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+                    Dra. Larissa Santos de Alcântara
+                  </h3>
+                  <p class="text-xs font-bold text-red-600 tracking-tight flex items-center gap-1.5">
+                    <i class="fa-solid fa-certificate text-[11px]"></i>
+                    <span>CRO-SP: 144484</span>
+                  </p>
+                  <p class="text-xs font-semibold text-gray-500">
+                    Clínica Geral, Reabilitação & Atendimento Humanizado
+                  </p>
+                </div>
+
+                <p class="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                  Comprometida em oferecer uma experiência odontológica tranquila, acolhedora e com suporte total em todas as etapas do seu tratamento.
+                </p>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-gray-100">
+                <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20a%20Dra.%20Larissa%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-red-600 text-white font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all tracking-tight shadow-md group-hover:shadow-lg">
+                  <i class="fa-brands fa-whatsapp text-sm text-emerald-400 group-hover:text-white"></i>
+                  <span>Agendar Consulta</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 2: Especialista em Ortodontia -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-red-400 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
+              <div>
+                <div class="flex items-start justify-between gap-3 mb-5">
+                  <div class="relative">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center text-3xl font-black shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-teeth"></i>
+                    </div>
+                    <span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[10px]" title="Disponível">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </div>
+                  <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-blue-50 text-blue-600 border border-blue-200">
+                    Ortodontia
+                  </span>
+                </div>
+
+                <div class="space-y-1 mb-3">
+                  <h3 class="text-lg font-black text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+                    Especialista em Ortodontia
+                  </h3>
+                  <p class="text-xs font-bold text-blue-600 tracking-tight flex items-center gap-1.5">
+                    <i class="fa-solid fa-certificate text-[11px]"></i>
+                    <span>Especialista Registrado(a) CRO-SP</span>
+                  </p>
+                  <p class="text-xs font-semibold text-gray-500">
+                    Aparelhos Fixos, Autoligados & Alinhadores Invisíveis
+                  </p>
+                </div>
+
+                <p class="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                  Planejamento digital preciso para corrigir dentes desalinhados e mordida cruzada com aparelhos discretos e máxima eficiência.
+                </p>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-gray-100">
+                <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20Ortodontia%2FAparelho%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-red-600 text-white font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all tracking-tight shadow-md group-hover:shadow-lg">
+                  <i class="fa-brands fa-whatsapp text-sm text-emerald-400 group-hover:text-white"></i>
+                  <span>Agendar Aparelho</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 3: Especialista em Implantes & Cirurgia -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-red-400 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
+              <div>
+                <div class="flex items-start justify-between gap-3 mb-5">
+                  <div class="relative">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-red-600 to-amber-700 text-white flex items-center justify-center text-3xl font-black shadow-lg shadow-red-500/20 group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[10px]" title="Disponível">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </div>
+                  <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200">
+                    Implantodontia
+                  </span>
+                </div>
+
+                <div class="space-y-1 mb-3">
+                  <h3 class="text-lg font-black text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+                    Especialista em Implantes
+                  </h3>
+                  <p class="text-xs font-bold text-amber-600 tracking-tight flex items-center gap-1.5">
+                    <i class="fa-solid fa-certificate text-[11px]"></i>
+                    <span>Especialista Registrado(a) CRO-SP</span>
+                  </p>
+                  <p class="text-xs font-semibold text-gray-500">
+                    Implantes Unitários, Múltiplos & Protocolo Fixo
+                  </p>
+                </div>
+
+                <p class="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                  Recupere a mastigação com segurança e firmeza. Cirurgias guiadas, sem dor e com protocolo de rápida cicatrização.
+                </p>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-gray-100">
+                <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20Implantes%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-red-600 text-white font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all tracking-tight shadow-md group-hover:shadow-lg">
+                  <i class="fa-brands fa-whatsapp text-sm text-emerald-400 group-hover:text-white"></i>
+                  <span>Agendar Implante</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 4: Especialista em Harmonização Facial & Estética -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-red-400 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
+              <div>
+                <div class="flex items-start justify-between gap-3 mb-5">
+                  <div class="relative">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 text-white flex items-center justify-center text-3xl font-black shadow-lg shadow-purple-500/20 group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[10px]" title="Disponível">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </div>
+                  <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-purple-50 text-purple-600 border border-purple-200">
+                    Estética & Harmonização
+                  </span>
+                </div>
+
+                <div class="space-y-1 mb-3">
+                  <h3 class="text-lg font-black text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+                    Especialista em Harmonização & Lentes
+                  </h3>
+                  <p class="text-xs font-bold text-purple-600 tracking-tight flex items-center gap-1.5">
+                    <i class="fa-solid fa-certificate text-[11px]"></i>
+                    <span>Especialista Registrado(a) CRO-SP</span>
+                  </p>
+                  <p class="text-xs font-semibold text-gray-500">
+                    Facetas, Lentes em Porcelana, Toxina Botulínica & Botox
+                  </p>
+                </div>
+
+                <p class="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                  Harmonia completa entre dentes e traços faciais, valorizando a sua beleza natural com resultados refinados e duradouros.
+                </p>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-gray-100">
+                <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20Harmoniza%C3%A7%C3%A3o%20e%20Est%C3%A9tica%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-red-600 text-white font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all tracking-tight shadow-md group-hover:shadow-lg">
+                  <i class="fa-brands fa-whatsapp text-sm text-emerald-400 group-hover:text-white"></i>
+                  <span>Agendar Estética</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 5: Odontopediatria -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-red-400 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
+              <div>
+                <div class="flex items-start justify-between gap-3 mb-5">
+                  <div class="relative">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 text-white flex items-center justify-center text-3xl font-black shadow-lg shadow-pink-500/20 group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[10px]" title="Disponível">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </div>
+                  <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-pink-50 text-pink-600 border border-pink-200">
+                    Infantil
+                  </span>
+                </div>
+
+                <div class="space-y-1 mb-3">
+                  <h3 class="text-lg font-black text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+                    Especialista em Odontopediatria
+                  </h3>
+                  <p class="text-xs font-bold text-pink-600 tracking-tight flex items-center gap-1.5">
+                    <i class="fa-solid fa-certificate text-[11px]"></i>
+                    <span>Especialista Registrado(a) CRO-SP</span>
+                  </p>
+                  <p class="text-xs font-semibold text-gray-500">
+                    Cuidado Lúdico, Selantes & Prevenção Infantil
+                  </p>
+                </div>
+
+                <p class="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                  Paciência, carinho e técnica para transformar a ida das crianças ao dentista em uma aventura divertida e livre de medos.
+                </p>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-gray-100">
+                <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20infantil%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-red-600 text-white font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all tracking-tight shadow-md group-hover:shadow-lg">
+                  <i class="fa-brands fa-whatsapp text-sm text-emerald-400 group-hover:text-white"></i>
+                  <span>Agendar Infantil</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 6: Endodontia & Canal -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-red-400 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
+              <div>
+                <div class="flex items-start justify-between gap-3 mb-5">
+                  <div class="relative">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white flex items-center justify-center text-3xl font-black shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[10px]" title="Disponível">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </div>
+                  <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-50 text-emerald-600 border border-emerald-200">
+                    Endodontia
+                  </span>
+                </div>
+
+                <div class="space-y-1 mb-3">
+                  <h3 class="text-lg font-black text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+                    Especialista em Canal & Dor
+                  </h3>
+                  <p class="text-xs font-bold text-emerald-600 tracking-tight flex items-center gap-1.5">
+                    <i class="fa-solid fa-certificate text-[11px]"></i>
+                    <span>Especialista Registrado(a) CRO-SP</span>
+                  </p>
+                  <p class="text-xs font-semibold text-gray-500">
+                    Tratamento de Canal Digital & Alívio Imediato
+                  </p>
+                </div>
+
+                <p class="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                  Tecnologia rotatória avançada para salvar o dente com rapidez, anestesia suave e alívio completo da dor já na primeira sessão.
+                </p>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-gray-100">
+                <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20estou%20com%20dor%20de%20dente%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20Canal%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-red-600 text-white font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all tracking-tight shadow-md group-hover:shadow-lg">
+                  <i class="fa-brands fa-whatsapp text-sm text-emerald-400 group-hover:text-white"></i>
+                  <span>Agendar Endodontia</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Membro 7: Equipe de Atendimento Humanizado & Recepção -->
+          <div class="swiper-slide h-auto">
+            <div class="bg-white rounded-3xl p-6 border-2 border-gray-100 hover:border-red-400 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
+              <div>
+                <div class="flex items-start justify-between gap-3 mb-5">
+                  <div class="relative">
+                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center text-3xl font-black shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                      <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <span class="absolute -bottom-1.5 -right-1.5 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[10px]" title="Disponível">
+                      <i class="fa-solid fa-check"></i>
+                    </span>
+                  </div>
+                  <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200">
+                    Recepção & Acolhimento
+                  </span>
+                </div>
+
+                <div class="space-y-1 mb-3">
+                  <h3 class="text-lg font-black text-gray-900 group-hover:text-red-600 transition-colors tracking-tight">
+                    Equipe de Atendimento Humanizado
+                  </h3>
+                  <p class="text-xs font-bold text-amber-600 tracking-tight flex items-center gap-1.5">
+                    <i class="fa-solid fa-heart text-[11px]"></i>
+                    <span>Cuidado & Dedicação Exclusiva</span>
+                  </p>
+                  <p class="text-xs font-semibold text-gray-500">
+                    Suporte pelo WhatsApp, Café & Acolhimento
+                  </p>
+                </div>
+
+                <p class="text-xs text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+                  Desde o seu primeiro 'olá' até a sua recuperação, nossa equipe está sempre a postos para te acolher com atenção, paciência e carinho.
+                </p>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-gray-100">
+                <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20equipe%20de%20atendimento%20da%20Odonto%20Excellence%20Boituva" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gray-900 hover:bg-emerald-600 text-white font-bold text-xs uppercase flex items-center justify-center gap-2 transition-all tracking-tight shadow-md group-hover:shadow-lg">
+                  <i class="fa-brands fa-whatsapp text-sm text-emerald-400 group-hover:text-white"></i>
+                  <span>Falar no WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Paginação do Swiper -->
+        <div class="team-swiper-pagination text-center mt-6"></div>
+      </div>
+
+      <!-- Banner de Confiança Abaixo do Carrossel -->
+      <div class="mt-8 bg-gray-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-red-600/20 border border-red-500/40 text-red-400 flex items-center justify-center text-2xl shrink-0">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <div>
+            <h4 class="text-base sm:text-lg font-black tracking-tight">Precisa de um plano personalizado para o seu caso?</h4>
+            <p class="text-xs sm:text-sm text-gray-400">Nossos especialistas realizam uma avaliação detalhada e sem compromisso para você.</p>
+          </div>
+        </div>
+        <a href="#agendar" class="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-black text-xs uppercase rounded-xl tracking-tight transition-all text-center shrink-0 shadow-lg shadow-red-600/30">
+          Agendar com a Equipe
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. FAQ ANTI-OBJEÃ‡ÃƒO
+       ========================================================================= -->
+  <section id="faq" class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-red-600 font-bold uppercase tracking-wider text-xs bg-red-50 px-3.5 py-1.5 rounded-full border border-red-100">
+          Transparência Total
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mt-3 tracking-[-0.04em]">
+          Perguntas frequentes & <span class="gradient-text">medos comuns</span>
+        </h2>
+        <p class="text-gray-600 mt-2 text-sm">
+          Acolhimento desde a primeira dúvida.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-200 bg-white shadow-sm">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-black text-sm sm:text-base text-gray-900 flex justify-between items-center gap-4 hover:text-red-600 tracking-tight">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-heart text-red-600 text-sm"></i>
+              <span>Tenho muito medo de dor e pavor de dentista. Como vocês me atendem?</span>
+            </span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Nosso maior compromisso é com o seu conforto. Utilizamos técnicas de anestesia suave e moderna, conversamos com você antes de iniciar e fazemos pausas a qualquer momento. Você está no controle do procedimento o tempo todo.
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-200 bg-white shadow-sm">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-black text-sm sm:text-base text-gray-900 flex justify-between items-center gap-4 hover:text-red-600 tracking-tight">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-heart text-red-600 text-sm"></i>
+              <span>Faz anos que não vou ao dentista e tenho vergonha. Vou ser julgado?</span>
+            </span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            De forma alguma! Nossa clínica é um espaço de acolhimento e recomeço. Nossa equipe já tratou milhares de sorrisos e está aqui exclusivamente para te ajudar a reconquistar sua autoestima, com zero julgamentos e total sigilo.
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-200 bg-white shadow-sm">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-black text-sm sm:text-base text-gray-900 flex justify-between items-center gap-4 hover:text-red-600 tracking-tight">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-heart text-red-600 text-sm"></i>
+              <span>Como funcionam os valores e as formas de pagamento?</span>
+            </span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Oferecemos condições facilitadas, parcelamento no cartão, carnê e opções que cabem no seu orçamento familiar. Na primeira avaliação, você recebe um plano detalhado e transparente para decidir sem pressão.
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl overflow-hidden transition-all duration-200 bg-white shadow-sm">
+          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-black text-sm sm:text-base text-gray-900 flex justify-between items-center gap-4 hover:text-red-600 tracking-tight">
+            <span class="flex items-center gap-3">
+              <i class="fa-solid fa-heart text-red-600 text-sm"></i>
+              <span>Posso apenas tirar dúvidas pelo WhatsApp antes de ir?</span>
+            </span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer px-5 pb-5 text-xs sm:text-sm text-gray-600 leading-relaxed">
+            Com certeza! Nossos dois números de WhatsApp: <strong>(15) 99709-1015</strong> e <strong>(15) 99689-7677</strong> estão à sua disposição. Você pode mandar mensagem a qualquer momento e nossa equipe te atende com total atenção.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. DEPOIMENTOS DE PACIENTES
+       ========================================================================= -->
+  <section id="depoimentos" class="py-16 sm:py-24 bg-gray-950 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-red-400 bg-white/5 px-3.5 py-1.5 rounded-full border border-white/10">
+          Prova Social
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-white mt-3 tracking-[-0.04em]">
+          Histórias reais de quem <span class="text-red-500">voltou a sorrir</span>
+        </h2>
+        <p class="text-gray-400 mt-3 text-sm sm:text-base">
+          A maior satisfação da Odonto Excellence Boituva é ver a transformação na vida de cada paciente.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-gray-900 border border-white/10 p-7 rounded-3xl relative shadow-xl hover:border-red-500 transition-all">
+          <div class="flex text-amber-400 gap-1 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+            "Fiz meu implante na Odonto Excellence de Boituva e foi a melhor escolha. O atendimento humanizado fez toda a diferença, me senti acolhido do início ao fim."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center font-black">
+              CF
+            </div>
+            <div>
+              <h4 class="font-extrabold text-sm text-white tracking-tight">Carlos Fernando</h4>
+              <p class="text-[11px] text-gray-400">Implante Dentário</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-white/10 p-7 rounded-3xl relative shadow-xl hover:border-red-500 transition-all">
+          <div class="flex text-amber-400 gap-1 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+            "Eu tinha verdadeiro pavor de agulha. Na Odonto Excellence eles tiveram uma paciência incrível comigo. Anestesia suave e sem dor alguma!"
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center font-black">
+              AL
+            </div>
+            <div>
+              <h4 class="font-extrabold text-sm text-white tracking-tight">Ana Luísa Rocha</h4>
+              <p class="text-[11px] text-gray-400">Ortodontia e Clareamento</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border border-white/10 p-7 rounded-3xl relative shadow-xl hover:border-red-500 transition-all">
+          <div class="flex text-amber-400 gap-1 text-sm mb-4">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed italic mb-6">
+            "Atendimento de primeiro mundo! Desde as recepcionistas até as dentistas, todo mundo te trata com o maior carinho. Super recomendo a clínica em Boituva!"
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+            <div class="w-10 h-10 rounded-full bg-red-700 text-white flex items-center justify-center font-black">
+              MS
+            </div>
+            <div>
+              <h4 class="font-extrabold text-sm text-white tracking-tight">Mariana Santos</h4>
+              <p class="text-[11px] text-gray-400">Estética & Prótese</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  </section>
+
+  <!-- =========================================================================
+       13. LOCALIZAÃ‡ÃƒO E RESPONSABILIDADE TÃ‰CNICA
+       ========================================================================= -->
+  <section id="localizacao" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-7 rounded-3xl overflow-hidden shadow-xl border border-gray-200 h-80 sm:h-96">
+          <iframe 
+            src="https://maps.google.com/maps?q=Rua%20Profa%20C%C3%A9lia%20Lourdes%20Vercelino%2C%20366%20-%20Santa%20Cruz%2C%20Boituva%20-%20SP%2C%2018557-020&t=m&z=16&output=embed&iwloc=near" 
+            class="w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização Odonto Excellence Boituva">
+          </iframe>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-block px-3 py-1 rounded-full bg-gray-900 text-white font-bold text-xs uppercase">
+            Transparência e Ã‰tica
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-[-0.03em]">
+            Responsabilidade técnica & cadastro
+          </h2>
+
+          <div class="space-y-4 bg-white p-6 rounded-3xl border border-gray-200 shadow-sm">
+            <div>
+              <p class="text-xs font-bold uppercase text-gray-400">Responsável Técnico (RT):</p>
+              <p class="font-extrabold text-sm text-gray-900 mt-0.5 tracking-tight">Dra. Larissa Santos de Alcântara</p>
+              <p class="text-xs text-red-600 font-bold">CRO: 144484</p>
+            </div>
+
+            <div class="pt-3 border-t border-gray-100">
+              <p class="text-xs font-bold uppercase text-gray-400">CRO da Clínica:</p>
+              <p class="font-extrabold text-sm text-gray-900 mt-0.5 tracking-tight">CRO-SP: 026128</p>
+            </div>
+
+            <div class="pt-3 border-t border-gray-100">
+              <p class="text-xs font-bold uppercase text-gray-400">CNPJ da Unidade:</p>
+              <p class="font-extrabold text-sm text-gray-900 mt-0.5 tracking-tight">44.217.534/0001-40</p>
+            </div>
+
+            <div class="pt-3 border-t border-gray-100">
+              <p class="text-xs font-bold uppercase text-gray-400">Endereço:</p>
+              <p class="text-xs text-gray-700 mt-0.5 font-medium">R. Profa. Célia Lourdes Vercelino, nÂ° 366 – Santa Cruz, Boituva – SP, 18557-020</p>
+              <a href="https://maps.google.com/maps?q=Rua+Profa+Celia+Lourdes+Vercelino,+366+-+Santa+Cruz,+Boituva+-+SP,+18557-020" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold text-red-600 hover:underline mt-1">
+                <span>Abrir no aplicativo do Google Maps</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[9px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       14. FOOTER INSTITUCIONAL COMPLETO
+       ========================================================================= -->
+  <footer class="bg-gray-950 text-white pt-16 pb-12 border-t-4 border-red-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <div class="space-y-4">
+          <div class="bg-white p-2.5 rounded-xl inline-block shadow-md">
+            <img src="assets/images/logo_horizontal.png" alt="Odonto Excellence Boituva" class="h-10 w-auto object-contain" />
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed font-normal">
+            A <strong>Odonto Excellence Boituva</strong> faz parte da maior rede de odontologia da América Latina, unindo alta tecnologia ao atendimento acolhedor e humanizado.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://wa.me/5515996897677" target="_blank" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 text-white flex items-center justify-center transition-colors">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+            </a>
+            <a href="https://www.instagram.com/odontoexcellenceboituva/" target="_blank" class="w-8 h-8 rounded-full bg-white/10 hover:bg-red-600 text-white flex items-center justify-center transition-colors">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-extrabold text-sm uppercase text-white tracking-wider mb-4 border-l-2 border-red-600 pl-2">
+            Navegação
+          </h4>
+          <ul class="space-y-2.5 text-xs text-gray-400 font-medium">
+            <li><a href="#humanizado" class="hover:text-red-400 text-red-400 font-bold transition-colors">Atendimento Humanizado</a></li>
+            <li><a href="#tratamentos" class="hover:text-red-400 transition-colors">Tratamentos Odontológicos</a></li>
+            <li><a href="#unidade" class="hover:text-red-400 transition-colors">Nossa Unidade Boituva</a></li>
+            <li><a href="#faq" class="hover:text-red-400 transition-colors">Dúvidas Frequentes</a></li>
+            <li><a href="#agendar" class="hover:text-red-400 transition-colors">Agendamento Online</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-extrabold text-sm uppercase text-white tracking-wider mb-4 border-l-2 border-red-600 pl-2">
+            Especialidades
+          </h4>
+          <ul class="space-y-2.5 text-xs text-gray-400 font-medium">
+            <li>Implantes Dentários</li>
+            <li>Ortodontia & Alinhadores</li>
+            <li>Harmonização Facial & Botox</li>
+            <li>Clareamento Dental</li>
+            <li>Facetas & Lentes de Contato</li>
+            <li>Dentaduras, Pontes & Próteses</li>
+            <li>Tratamento de Canal Sem Dor</li>
+            <li>Atendimento Infantil & Selantes</li>
+            <li>Clínico Geral & Restaurações</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-extrabold text-sm uppercase text-white tracking-wider mb-4 border-l-2 border-red-600 pl-2">
+            Contatos Boituva
+          </h4>
+          <div class="space-y-3 text-xs text-gray-400">
+            <p class="flex items-start gap-2">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-sm mt-0.5"></i>
+              <a href="https://wa.me/5515997091015" target="_blank" class="font-bold text-gray-200 hover:text-emerald-400">(15) 99709-1015</a>
+            </p>
+            <p class="flex items-start gap-2">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-sm mt-0.5"></i>
+              <a href="https://wa.me/5515996897677" target="_blank" class="font-bold text-gray-200 hover:text-emerald-400">(15) 99689-7677</a>
+            </p>
+            <p class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-red-400 mt-0.5"></i>
+              <span>R. Profa. Célia Lourdes Vercelino, 366 – Santa Cruz, Boituva/SP</span>
+            </p>
+            <div class="pt-2">
+              <a href="#agendar" class="inline-block bg-gradient-to-r from-red-600 to-red-700 text-white font-black text-xs uppercase px-4 py-2.5 rounded-xl shadow-lg transition-all hover:scale-105 tracking-tight">
+                Agendar Avaliação
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium">
+        <p>Â© 2026 Odonto Excellence Boituva. Todos os direitos reservados.</p>
+        <p class="text-gray-400">Tipografia Inter Black & Atendimento Humanizado.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       15. BARRA FIXA MOBILE
+       ========================================================================= -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-gray-200 p-3 flex gap-2 shadow-2xl">
+    <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20da%20Odonto%20Excellence%20Boituva" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs uppercase py-3 rounded-xl flex items-center justify-center gap-2 shadow-md tracking-tight">
+      <i class="fa-brands fa-whatsapp text-base"></i>
+      <span>WhatsApp</span>
+    </a>
+    <a href="#agendar" class="flex-1 bg-gradient-to-r from-red-600 to-red-700 text-white font-black text-xs uppercase py-3 rounded-xl flex items-center justify-center gap-2 shadow-md tracking-tight">
+      <i class="fa-regular fa-calendar-check"></i>
+      <span>Agendar</span>
+    </a>
+  </div>
+
+  <!-- Botão Flutuante WhatsApp Pulsante -->
+  <a href="https://wa.me/5515996897677?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Odonto%20Excellence%20Boituva" target="_blank" class="hidden sm:flex fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-16 h-16 rounded-full shadow-2xl items-center justify-center text-3xl animate-pulse-slow transition-transform hover:scale-110" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- =========================================================================
+       16. SCRIPTS
+       ========================================================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // FAQ Accordion
+    function toggleFaq(button) {
+      if (!button) return;
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.fa-chevron-down');
+      
+      const isOpen = answer && answer.classList.contains('open');
+      
+      document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.fa-chevron-down').forEach(el => el.style.transform = 'rotate(0deg)');
+
+      if (!isOpen && answer) {
+        answer.classList.add('open');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Menu Mobile
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+      }
+
+      // Carrossel Clínica
+      if (typeof Swiper !== 'undefined' && document.querySelector('.clinicSwiper')) {
+        try {
+          new Swiper('.clinicSwiper', {
+            loop: true,
+            autoplay: {
+              delay: 4500,
+              disableOnInteraction: false,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+          });
+        } catch (e) {
+          console.error('Erro clinicSwiper:', e);
+        }
+      }
+
+      // Carrossel Equipe
+      if (typeof Swiper !== 'undefined' && document.querySelector('.teamSwiper')) {
+        try {
+          new Swiper('.teamSwiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 24,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: '.team-swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.team-swiper-next',
+              prevEl: '.team-swiper-prev',
+            },
+            breakpoints: {
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+              }
+            }
+          });
+        } catch (e) {
+          console.error('Erro teamSwiper:', e);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
