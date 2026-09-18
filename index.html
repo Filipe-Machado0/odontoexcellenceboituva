@@ -18,13 +18,12 @@
 
   <link rel="icon" type="image/png" href="assets/images/logo.png" />
 
-  <!-- Google Fonts: Inter (100 a 900) - Tipografia Oficial Exata do Portal -->
-
+  <!-- Google Fonts: Cinzel & Cormorant Garamond (Tipografia Premium da Logo) + Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- AOS (Animate on Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- Tailwind CSS CDN -->
 
@@ -125,127 +124,102 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
+    :root {
+      --font-serif-brand: 'Cinzel', 'Cormorant Garamond', 'Trajan Pro', Georgia, serif;
+      --font-body-brand: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+    }
 
     * {
-
-      font-family: 'Inter', sans-serif;
-
+      font-family: var(--font-body-brand);
     }
 
     body {
-
-      font-family: 'Inter', sans-serif;
-
+      font-family: var(--font-body-brand);
       color: #0F172A;
-
       background-color: #FFFFFF;
-
       overflow-x: hidden;
-
       -webkit-font-smoothing: antialiased;
-
       -moz-osx-font-smoothing: grayscale;
-
     }
 
-    
+    /* Tipografia de Logo & Títulos Institucionais Sofisticados */
+    .font-brand-serif {
+      font-family: var(--font-serif-brand) !important;
+      letter-spacing: 0.02em;
+    }
 
-    .font-black-title {
+    .font-logo-title {
+      font-family: 'Cinzel', serif !important;
+      letter-spacing: 0.05em;
+    }
 
-      font-family: 'Inter', sans-serif;
-
-      font-weight: 900;
-
-      letter-spacing: -0.04em;
-
+    h1, h2 {
+      font-family: var(--font-serif-brand);
     }
 
     .gradient-text {
-
-      background: linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #B91C1C 100%);
-
+      background: linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #991B1B 100%);
       -webkit-background-clip: text;
-
       -webkit-text-fill-color: transparent;
-
     }
 
     .hero-dot-pattern {
-
-      background-image: radial-gradient(circle at 2px 2px, rgba(239, 68, 68, 0.35) 1.5px, transparent 0);
-
-      background-size: 40px 40px;
-
+      background-image: radial-gradient(circle at 2px 2px, rgba(220, 38, 38, 0.25) 1.5px, transparent 0);
+      background-size: 36px 36px;
     }
 
     .icon-spring {
-
       transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-
     }
 
     .group:hover .icon-spring {
+      transform: scale(1.10) translateY(-2px);
+    }
 
-      transform: scale(1.12) rotate(4deg);
+    /* Custom Glassmorphism & Micro-interactions */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(220, 38, 38, 0.12), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+      border-color: rgba(220, 38, 38, 0.3);
     }
 
     /* Custom Scrollbar */
-
     ::-webkit-scrollbar {
-
-      width: 10px;
-
+      width: 8px;
     }
-
     ::-webkit-scrollbar-track {
-
-      background: #0F172A;
-
+      background: #0B1120;
     }
-
     ::-webkit-scrollbar-thumb {
-
       background: #DC2626;
-
-      border-radius: 5px;
-
+      border-radius: 4px;
     }
-
     ::-webkit-scrollbar-thumb:hover {
-
       background: #B91C1C;
-
     }
 
     .swiper-button-next, .swiper-button-prev {
-
       color: #DC2626 !important;
-
       background: #FFFFFF;
-
       width: 44px !important;
-
       height: 44px !important;
-
       border-radius: 50%;
-
       box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-
       border: 1px solid #E2E8F0;
-
       transition: all 0.3s;
-
     }
 
     .swiper-button-next:hover, .swiper-button-prev:hover {
-
       background: #DC2626;
-
       color: #FFFFFF !important;
-
       border-color: #DC2626;
-
     }
 
     .swiper-button-next:after, .swiper-button-prev:after {
@@ -554,7 +528,7 @@
 
           <!-- TÍTULO OFICIAL COM A MESMA TIPOGRAFIA DA IMAGEM -->
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.08] tracking-[-0.04em]">
+          <h1 data-aos="fade-up" data-aos-duration="900" class="font-brand-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.12] tracking-tight">
 
             Respire fundo <span class="text-red-500">e relaxe:</span> <br />
 
@@ -578,7 +552,7 @@
 
           <!-- CARDS DE AÃ‡ÃƒO COM TIPOGRAFIA INTER -->
 
-          <div class="w-full space-y-3 pt-2">
+          <div data-aos="fade-up" data-aos-delay="200" class="w-full space-y-3 pt-2">
 
             
 
@@ -718,7 +692,7 @@
 
         <!-- Coluna Direita: Imagem da Clínica com Badges Flutuantes -->
 
-        <div class="md:col-span-5 relative mt-6 md:mt-0">
+        <div data-aos="fade-left" data-aos-delay="300" class="md:col-span-5 relative mt-6 md:mt-0">
 
           
 
@@ -982,7 +956,7 @@
 
         <img src="assets/images/logo.png" alt="Odonto Excellence" class="h-16 sm:h-20 w-auto mx-auto object-contain mb-4" />
 
-        <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-[-0.04em] text-gray-900 leading-tight">
+        <h2 data-aos="fade-up" class="font-brand-serif text-3xl sm:text-5xl font-bold uppercase tracking-tight text-gray-900 leading-tight">
 
           ATENDIMENTO <br />
 
@@ -1222,7 +1196,7 @@
 
         </span>
 
-        <h2 class="text-3xl lg:text-5xl font-black text-gray-900 mt-4 tracking-[-0.04em]">
+        <h2 data-aos="fade-up" class="font-brand-serif text-3xl lg:text-5xl font-bold text-gray-900 mt-4 tracking-tight">
 
           Sua jornada para um <span class="gradient-text">sorriso saudável</span>
 
@@ -1360,7 +1334,7 @@
 
         </span>
 
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mt-3 tracking-[-0.04em]">
+        <h2 data-aos="fade-up" class="font-brand-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 tracking-tight">
 
           Todos os tratamentos na <span class="gradient-text">unidade Boituva</span>
 
@@ -1952,7 +1926,7 @@
 
           
 
-          <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-[-0.04em] leading-tight">
+          <h2 data-aos="fade-up" class="font-brand-serif text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight leading-tight">
 
             Conheça nossa estrutura <br />
 
@@ -2182,7 +2156,7 @@
 
           </span>
 
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mt-3 tracking-[-0.04em] leading-tight">
+          <h2 data-aos="fade-up" class="font-brand-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 tracking-tight leading-tight">
 
             Quem cuida de você na <br class="hidden sm:inline" />
 
@@ -3418,6 +3392,20 @@
 
        ========================================================================= -->
 
+    <!-- AOS (Animate on Scroll) JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          once: true,
+          offset: 80,
+          easing: 'ease-out-cubic'
+        });
+      }
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
